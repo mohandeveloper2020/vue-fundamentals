@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Veu Directive</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div
+        v-bind:title="randNum"
+        v-if="shown"
+      >
+        Hover over me to get the random number
+      </div>
+    </div>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          randNum: Math.floor(Math.random() * 50) + 1,
+          shown: true
+        }
+      })
+    </script>
+  </body>
+</html>

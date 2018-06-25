@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Buttons</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+
+    <div id="app">
+      <button @click="reveal">Click me to seen new secret number</button>
+    </div>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+
+        data: {
+          secretNumber: Math.floor(Math.random() * 100) + 1
+        },
+
+        methods: {
+          reveal() {
+            document.write(`New secret number is: ${this.secretNumber}`);
+          }
+        }
+
+      })
+    </script>
+
+  </body>
+</html>

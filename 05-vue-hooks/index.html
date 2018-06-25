@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Hooks</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+
+    <div id="app">
+      Count : {{count}}
+      <button @click="increase">Increase</button>
+      <button @click="decrease">Decrease</button>
+    </div>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+
+        data: {
+          count: 0
+        },
+
+        methods: {
+          increase(){
+            this.count++
+          },
+          decrease(){
+            this.count--
+          }
+        }
+
+      })
+    </script>
+
+  </body>
+</html>

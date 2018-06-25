@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Veu Lists</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+          <li v-for="color in colors" v-if="color.primary">{{color.text}}</li>
+      </ul>
+
+      <ul>
+        <li v-for="person in persons" v-if="person.complete">{{person.age}}, {{person.gender}}</li>
+      </ul>
+    </div>
+
+    <script>
+
+
+      const app = new Vue({
+        el: "#app",
+        data: {
+          colors: [
+            {
+              text: 'red',
+              primary: true
+            },
+            {
+              text: 'green',
+              primary: false
+            },
+            {
+              text: 'blue',
+              primary: false
+            },
+            {
+              text: 'cyan',
+              primary: true
+            }
+          ],
+
+          persons: [
+            {
+              age: 26,
+              gender: 'male',
+              complete: true
+            },
+            {
+              age: 22,
+              gender: 'female',
+              complete: true
+            },
+            {
+              age: 30,
+              gender: 'unknown',
+              complete: false
+            }
+          ]
+
+        }
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Veu Instance</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{text}}
+    </div>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          text: "Hello, World!"
+        }
+      })
+    </script>
+  </body>
+</html>
