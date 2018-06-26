@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Veu Directive</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+      .active{
+        color: green;
+      }
+      .disabled{
+        color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+
+      <h1 v-if="isActive">{{ message }}</h1>
+      <h1 v-else-if="message === 'Hello'">Message is {{ message }}</h1>
+      <h1 v-else>No message</h1>
+
+    </div>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello",
+          isActive: false
+        }
+      })
+    </script>
+  </body>
+</html>
