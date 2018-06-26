@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Veu Directive</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+
+      <!-- v-bind is used to bind the data attribute, simply using semicolor (:) is short-form of v-bind -->
+      <a v-bind:href="url">Google</a>
+      <a :href="url">Google</a>
+
+      <!-- @click is short-form of v-on:click -->
+      <h1 v-on:click="number++">{{ number }}</h1>
+      <h1 @click="number--">{{ number }}</h1>
+
+      <!-- To prevent form not to submit and not to refresh the page, use (@submit.prevent)-->
+      <form @submit.prevent="number++">
+        <button type="submit">SUBMIT</button>
+      </form>
+
+    </div>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          url: "https://www.google.com",
+          number: 10
+        }
+      })
+    </script>
+  </body>
+</html>
