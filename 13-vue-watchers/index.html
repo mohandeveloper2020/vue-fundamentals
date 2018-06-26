@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Veu Directive</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+
+      <h1>Mohan M {{isActive === 'active' ? 'is active' : 'is not active'}}</h1>
+    </div>
+
+    <script>
+      let app = new Vue({
+        el: "#app",
+        data: {
+          isActive: 'not active'
+        },
+        watch: {
+          isActive: function(newValue){
+            console.log('Sending an email - ' + newValue)
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
