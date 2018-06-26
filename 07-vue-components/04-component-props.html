@@ -15,16 +15,16 @@
     <script>
 
       Vue.component('posts', {
-		
-		props: ['title'],
-		
+
+	     props: ['title'],
+
         template: `<h1 @click="sayHello">{{ title }}</h1>`,
-		
-		data() {
-			return {
-				message: 'Welcome'
-			}
-		},
+
+    		data() {
+    			return {
+    				message: 'Welcome'
+    			}
+    		},
 
         methods: {
           sayHello(){
