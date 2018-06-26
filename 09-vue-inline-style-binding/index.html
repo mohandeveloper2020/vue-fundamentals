@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Veu Directive</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+
+      <!-- Inline styling with css properties (used v-bind, short-form is simply using semicolon (:) )-->
+      <h1 v-bind:style="{color: 'red', fontSize: '20px'}">{{ message }}</h1>
+
+      <!-- Inline styling with data defined in Vue -->
+      <h1 :style="{color: 'green', fontSize: fontSize}">{{ message }}</h1>
+
+      <!-- Inline styling with object defined in Vue -->
+      <h1 :style="styledObject">{{ message }}</h1>
+
+      <!-- Inline styling with array of objects defined in Vue (takes last indexed object)-->
+      <h1 :style="[styledObject, styledObject2]">{{ message }}</h1>
+
+      <!-- Inline styling with multiple objects -->
+      <h1 :style="[styledObject, borderObject]">{{ message }}</h1>
+
+    </div>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello",
+          fontSize: '30px',
+          styledObject: {
+            color: 'blue',
+            fontSize: '40px'
+          },
+          styledObject2: {
+            color: 'yellow',
+            fontSize: '80px'
+          },
+          borderObject: {
+            border: '1px solid #ccc'
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
