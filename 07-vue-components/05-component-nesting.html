@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Veu Directive</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+
+      <posts></posts>
+
+    </div>
+
+    <script>
+
+      Vue.component('posts', {
+		
+        template: `
+			<div>
+				<ul>
+					<blogs v-for="user in users" :key="user.id">{{ user.title }}</blogs>
+				</ul>
+				<ul>
+					<human v-for="person in persons" :key="person.id">{{ person.title }}</human>
+				</ul>
+			</div>
+		`,
+		
+		data() {
+			return {
+				users: [
+					{id: 1, title: 'post 1'},
+					{id: 2, title: 'post 2'},
+					{id: 3, title: 'post 3'}
+				],
+				persons: [
+					{id: 4, title: 'age'},
+					{id: 5, title: 'gender'}
+				]
+			}
+		}
+      });
+	  
+	  Vue.component('blogs', {
+		template: `<li><slot></slot></li>`
+		// slot is mandatory, as it says this li should replace the component post wherever it used.
+	  });
+	  
+	  Vue.component('human', {
+		template: `<li><slot></slot></li>`
+	  });
+
+      let app = new Vue({
+        el: "#app"
+      })
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Veu Directive</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+
+      <posts></posts>
+
+    </div>
+
+    <script>
+
+      Vue.component('posts', {
+        template: `<h1>New component created</h1>`
+      });
+
+      let app = new Vue({
+        el: "#app"
+      })
+
+    </script>
+  </body>
+</html>
