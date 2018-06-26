@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Veu Component</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- String Interpolation -->
+      <h1>{{ message }}</h1>
+
+      <!-- Data binding -->
+      <a v-bind:href="url">{{ url }}</a> <br/>
+      <a :href="url">Google</a>
+
+      <h1 :data="dynamicId">{{ dynamicId * 2 }}</h1>
+
+      <div>
+        <!-- Two-way data binding with directive(v-model) -->
+        <input type="text" v-model="message">
+        <h3>{{ message }}</h3>
+      </div>
+
+      <div>
+        <!-- Two-way data binding -->
+        <input type="checkbox" v-model="options" value="computers">
+        MCA
+        <input type="checkbox" v-model="options" value="business">
+        MBA
+
+        <h3>You have selected {{ options.join(' and ') }}</h3>
+      </div>
+
+      <script>
+        const vm = new Vue({
+          el: '#app',
+          data: {
+            message: "Hello",
+            url: "https://www.google.com",
+            dynamicId: 30,            
+            options: []
+          }
+        })
+      </script>
+  </body>
+</html>
