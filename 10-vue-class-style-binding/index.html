@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Veu Directive</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+      .active{
+        color: green;
+      }
+      .disabled{
+        color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+
+      <!-- normal way of class name -->
+      <h1 class="active">{{ message }}</h1>
+
+      <!-- class binding -->
+      <h1 :class="{active: isActive}">{{ message }}</h1>
+
+      <!-- class binding, additionally with normal way of class name-->
+      <h1 class="static" :class="{active: isActive, disabled: isNotActive}">{{ message }}</h1>
+
+      <!-- class binding with terinary operation -->
+      <h1 class="static" :class="[isActive ? 'active' : 'disabled']">{{ message }}</h1>
+
+    </div>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello",
+          isActive: true,
+          isNotActive: false
+        }
+      })
+    </script>
+  </body>
+</html>
